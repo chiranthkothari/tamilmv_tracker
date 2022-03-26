@@ -10,8 +10,8 @@ bot.start((ctx) => {
   ctx.reply(`
 Send the below commands to get latest movie releases on tamilblasters torrent site:
 
-1. /list10 To get latest 10 releases
-2. /list15 To get latest 15 releases 
+1. /list10 To get latest 10 releases.
+2. /list15 To get latest 15 releases.
   `);
 });
 

@@ -1,6 +1,6 @@
 const rp = require('request-promise');
 const $ = require('cheerio');
-var cron = require('node-cron');
+var CronJob = require('cron').CronJob;
 const { Telegraf } = require('telegraf');
 
 const url = 'https://tamilblasters.buzz/';
@@ -8,7 +8,7 @@ const bot = new Telegraf(process.env.BOT_ID);
 
 bot.start((ctx) => ctx.reply('Welcome'));
 
-cron.schedule('*/1 * * * *', function () {
+var job = new CronJob('*/1 * * * *', function () {
   rp(url)
     .then(function (html) {
       const cheerioData = $.load(html);
@@ -33,5 +33,7 @@ cron.schedule('*/1 * * * *', function () {
       console.log(err);
     });
 });
+
+job.start()
 
 bot.launch();

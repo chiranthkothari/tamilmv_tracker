@@ -4,7 +4,7 @@ var cron = require('node-cron');
 const { Telegraf } = require('telegraf');
 
 const url = 'https://tamilblasters.buzz/';
-const bot = new Telegraf('5291018711:AAG0_gpB9O2hYzRl7nA_Iq9K8EUvLsJxXN0');
+const bot = new Telegraf(process.env.BOT_ID);
 
 bot.start((ctx) => ctx.reply('Welcome'));
 

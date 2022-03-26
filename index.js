@@ -8,7 +8,7 @@ const bot = new Telegraf(process.env.BOT_ID);
 
 bot.start((ctx) => ctx.reply('Welcome'));
 
-var job = new CronJob('*/1 * * * *', function () {
+var job = new CronJob('* */3 * * *', function () {
   rp(url)
     .then(function (html) {
       const cheerioData = $.load(html);

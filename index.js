@@ -8,6 +8,8 @@ const bot = new Telegraf(process.env.BOT_ID);
 
 bot.start((ctx) => ctx.reply('Welcome'));
 
+bot.telegram.sendMessage('-1001702762453', "Bot restarted");
+
 var job = new CronJob('* */3 * * *', function () {
   rp(url)
     .then(function (html) {
